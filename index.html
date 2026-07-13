@@ -164,11 +164,11 @@
   .step p b{color:var(--navy);font-weight:600;}
 
   /* ---------- copy boxes ---------- */
-  .helper{display:grid;grid-template-columns:1fr;max-width:520px;margin-top:var(--s4);}
-  .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;}
+  .helper{display:grid;grid-template-columns:1fr;margin-top:var(--s4);}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:clamp(26px,3vw,36px);}
   .box .bt{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:var(--s4);}
-  .box .kv{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px;}
-  .box .kv:last-child{border-bottom:none;}
+  .kv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));column-gap:32px;}
+  .box .kv{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px;}
   .box .kv span:first-child{color:var(--ink-3);}
   .box .kv span:last-child{font-weight:600;text-align:right;}
 
@@ -379,11 +379,13 @@
     <div class="helper">
       <div class="box">
         <div class="bt">추천 입력 정보 · 추천받는 사람</div>
-        <div class="kv"><span>성명</span><span>강위원</span></div>
-        <div class="kv"><span>성별</span><span>남</span></div>
-        <div class="kv"><span>생년월일</span><span>1973. 5. 10.</span></div>
-        <div class="kv"><span>직장 · 직위</span><span>전라남도청 · 전 경제부지사</span></div>
-        <div class="kv"><span>피추천자 동의</span><span>동의</span></div>
+        <div class="kv-grid">
+          <div class="kv"><span>성명</span><span>강위원</span></div>
+          <div class="kv"><span>성별</span><span>남</span></div>
+          <div class="kv"><span>생년월일</span><span>1973. 5. 10.</span></div>
+          <div class="kv"><span>직장 · 직위</span><span>전라남도청 · 전 경제부지사</span></div>
+          <div class="kv"><span>피추천자 동의</span><span>동의</span></div>
+        </div>
       </div>
     </div>
   </div>
